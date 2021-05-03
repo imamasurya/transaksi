@@ -1,13 +1,222 @@
+:root {
+  --cloud: #f3f7f9;
+  --green: #56b586;
+  --orange: #fd6542;
+  --white: #ffffff;
+  --gray: #cccccc;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--cloud);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 520px) {
+  .container {
+    width: 520px;
+    margin: 0 auto;
+  }
+}
+
+
+/*
+ * Texts
+ */
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-thin {
+  font-weight: 400;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-highlight {
+  color: var(--orange);
+}
+
+/*
+ * Badge
+ */
+.badge {
+  padding: 2px 6px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.badge.badge-success {
+  color: var(--white);
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.badge.badge-pending {
+  border-color: var(--orange);
+}
+
+
+/*
+ * Button
+ */
+.button {
+  padding: 6px 12px;
+  border-radius: 3px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.button-secondary {
+  background-color: transparent;
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.button-secondary:hover {
+  font-weight: 600;
+}
+
+
+/*
+ * Card
+ */
+.card {
+  background-color: var(--white);
+  padding: 12px 20px;
+  margin-bottom: 10px;
+}
+
+
+/*
+ * TransactionFilter
+ */
+.transaction-filter {
+  display: flex;
+  width: 100%;
+  margin: 24px 0;
+  border: 2px solid var(--gray);
+  border-radius: 5px;
+}
+
+.transaction-filter .transaction-filter-search {
+  display: flex;
+  flex: 2;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: var(--white);
+  border-right: 2px solid var(--gray);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.transaction-filter .transaction-filter-search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.transaction-filter .transaction-filter-search-input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+
+.transaction-filter .transaction-filter-sort {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background-color: var(--white);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/*
+ * TransactionItem
+ */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background-color: var(--white)
+}
+
+.transaction-item:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.transaction-item-content p {
+  margin: 0;
+
+}
+
+.transaction-item-success {
+  border-left: 4px solid var(--green);
+}
+
+.transaction-item-pending {
+  border-left: 4px solid var(--orange);
+}
+
+
+/*
+ * TransactionDetail
+ */
+.transaction-detail p {
+  margin: 0;
+}
+
+.transaction-detail .transaction-detail-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-detail .transaction-detail-content-group {
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
